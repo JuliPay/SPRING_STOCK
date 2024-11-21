@@ -1,6 +1,9 @@
 package gestion_productos.prueba.DTOs;
 
+import gestion_productos.prueba.Entidad.Emprendimiento;
+
 public class UsuarioCreateDTO {
+    public Emprendimiento getNombreEmprendimiento;
     private String nombreUsuario;
     private String documento;
     private String correoElectronico;
@@ -46,5 +49,13 @@ public class UsuarioCreateDTO {
 
     public void setNombreEmprendimiento(String nombreEmprendimiento) {
         this.nombreEmprendimiento = nombreEmprendimiento;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 }

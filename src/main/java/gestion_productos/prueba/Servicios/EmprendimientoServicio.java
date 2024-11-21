@@ -4,6 +4,7 @@ import gestion_productos.prueba.DTOs.EmprendimientoResponseDTO;
 import gestion_productos.prueba.DTOs.RegistrarseDTO;
 import gestion_productos.prueba.Entidad.Emprendimiento;
 import gestion_productos.prueba.Repositorios.EmprendimientoRepositorio;
+import gestion_productos.prueba.Seguridad.PasswordUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,8 +29,7 @@ public class EmprendimientoServicio {
         }
 
         // Encriptar la contraseña
-        Object BCrypt = null;
-        String contraseñaEncriptada = BCrypt.hashCode(dto.getContraseña(), BCrypt.equals());
+        String contraseñaEncriptada = PasswordUtil.hashPassword(dto.getContraseña());
 
         // Crear la entidad y guardarla
         Emprendimiento emprendimiento = new Emprendimiento();

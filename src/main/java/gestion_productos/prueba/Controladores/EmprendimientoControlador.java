@@ -15,7 +15,7 @@ public class EmprendimientoControlador {
     private EmprendimientoServicio emprendimientoServicio;
 
     @PostMapping
-    public ResponseEntity<EmprendimientoResponseDTO> registrarEmprendimiento(@Valid @RequestBody RegistrarseDTO dto) {
+    public ResponseEntity<EmprendimientoResponseDTO> registrarEmprendimiento(@RequestBody RegistrarseDTO dto) {
         EmprendimientoResponseDTO response = emprendimientoServicio.registrarEmprendimiento(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

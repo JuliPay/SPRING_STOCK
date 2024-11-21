@@ -50,8 +50,8 @@ public class Usuario {
         this.correoElectronico = correoElectronico;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public static String setContraseña(String contraseña) {
+        return contraseña ;
     }
 
     public void setRol(Roles rol) {

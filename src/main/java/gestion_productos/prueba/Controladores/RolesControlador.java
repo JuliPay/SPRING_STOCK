@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/roles")
 public class RolesControlador {
     @Autowired
-    private RolServicio rolesServicio; // El servicio debe estar implementado para manejar la lógica de negocios
+    private RolServicio rolesServicio; 
 
     @PostMapping
-    public ResponseEntity<RolCreateDTO> crearRol(@Valid @RequestBody RolCreateDTO rolDTO) {
+    public ResponseEntity<RolCreateDTO> crearRol(@RequestBody RolCreateDTO rolDTO) {
         RolCreateDTO response = rolesServicio.crearRol(rolDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
